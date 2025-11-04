@@ -7,7 +7,7 @@ from scoreboard_class import Scoreboard
 screen = Screen()
 screen.bgcolor("black")
 screen.setup(width=800, height=600)
-screen.title("Swaggaliscious Pongaliscious Gamealiscious")
+screen.title("Pongaliscious")
 screen.tracer(0)
 
 r_paddle = Paddle((350, 0))
@@ -45,5 +45,6 @@ while game_is_on:
     if ball.xcor() < -370:
         ball.reset_position()
         scoreboard.r_point()
+
 
 screen.exitonclick()
