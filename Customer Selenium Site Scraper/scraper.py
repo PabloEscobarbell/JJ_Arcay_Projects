@@ -7,7 +7,7 @@ import openpyxl
 from dotenv import load_dotenv
 import os
 
-########## FUNCTIONS START ##########
+##### FUNCTIONS #####
 def pah_cat_food_scrape(url, row_dict, driver):
     driver.get(url)
     wait = WebDriverWait(driver, 5)
@@ -50,7 +50,8 @@ def pah_cat_food_scrape(url, row_dict, driver):
         row_dict['rating'].value = ''
     
     return row_dict
-########## FUNCTIONS END ##########
+
+##### MAIN SCRIPT #####
 load_dotenv()
 file_path = os.getenv("scraped_data_workbook_path")
 safety_file_path = os.getenv("scraped_data_workbook_safety_path")
@@ -71,8 +72,7 @@ for sheet in wb.sheetnames:
     else:
         print(f"Skipping sheet: {sheet.title} as it is not 'Pets at Home Cat Food'")
     print(f"Processed sheet: {sheet.title}")
-    
-# Save the workbook after updating
+
 wb.save(file_path)
 wb.close()
 driver.quit()
@@ -82,7 +82,6 @@ while prompt_status:
     prompt = input('Would you like to create a copy of the workbook for safety? (yes/no): ').lower()
 
     if prompt == 'yes':
-        # Create a copy of the workbook and save it with a new name
         wb.save(safety_file_path)
         prompt_status = False
     elif prompt == 'no':
