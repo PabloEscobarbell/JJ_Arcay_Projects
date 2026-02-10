@@ -15,7 +15,7 @@ except Exception as e:
     
 for file in files:
     print(f"Processing file: {file}")
-    file_path = os.path.join(data_dump, file)
+    file_path: str = str(os.path.join(data_dump, file))
     df = pd.read_csv(file_path, encoding='utf-8', encoding_errors='ignore') # Create the dataframe for the opened file.
     df.to_csv(os.path.join(tempHold, file), index=False) # Save a copy to temporaryHold.
     
