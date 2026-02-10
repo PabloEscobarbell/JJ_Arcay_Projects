@@ -1,3 +1,5 @@
-# Welcome to my projects repo and have a wander!
+# Greetings fellow travelers! Welcome to my project repository.
 
-<p>These are just a few of many small personal projects that I have worked on for either professionally, for enjoyment, or both. This codebase is for viewing purposes only and does not contain any actual information or data that would have been used in prod. Enjoy!</p>
+<p>Here you will find a collection of various projects that I have worked on, ranging from data automation, analytics, and visualisation to personal projects that I have undertaken for fun and learning.</p> 
+<p>Feel free to explore the different folders and files to see some of the work that I have done. Each project is organised in its own folder, with a README file that provides an overview of the project, its purpose, and any other relevant information.</p> 
+<p>Happy exploring!</p>

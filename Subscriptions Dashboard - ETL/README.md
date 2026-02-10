@@ -1,0 +1,1 @@
+<p>This project was made to send subscription data using into a dashboard. The data is sent via email and the dashboard is built using Salesforce Datorama. The data is sent in the form of a CSV file and the email is sent using the smtplib library.</p>
