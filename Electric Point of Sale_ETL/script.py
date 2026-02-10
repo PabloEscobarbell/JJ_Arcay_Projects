@@ -21,7 +21,7 @@ for file in files:
     
     ##### Checking if "List Number" column is present. #####
     if 'List Number' in df.columns:
-        cols = ['List Number'] + [col for col in df.columns if col != 'List Number']
+        cols: list = ['List Number'] + [col for col in df.columns if col != 'List Number']
         df = df[cols]
     else:   
         epos.send_error_notification(file_path=file_path, error_msg="Missing 'List Number' column.")
