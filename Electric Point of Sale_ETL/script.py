@@ -40,7 +40,6 @@ for file in files:
     df.columns = df.columns.astype(str)
     year = epos.get_date_year(df)[0]
     full_date = epos.get_date_year(df)[1]
-    epos.data_transformation(df, instruction='fix customer names')
     customer_name = epos.get_customer_name(df)
     
     ##### Data transformations #####

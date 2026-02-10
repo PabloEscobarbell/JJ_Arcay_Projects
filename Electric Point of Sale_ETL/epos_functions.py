@@ -7,10 +7,10 @@ import time
 import pandas as pd
 
 load_dotenv()
-EMAIL_ADDRESS: str = os.getenv('userEmail')
-EMAIL_PASSWORD: str = os.getenv('userPassword')
-ERROR_EMAIL: str = os.getenv('receiverEmail')
-DASHBOARD: str = os.getenv('new_epos_stream')
+EMAIL_ADDRESS: str = str(os.getenv('userEmail'))
+EMAIL_PASSWORD: str = str(os.getenv('userPassword'))
+ERROR_EMAIL: str = str(os.getenv('receiverEmail'))
+DASHBOARD: str = str(os.getenv('new_epos_stream'))
 
 def get_files(directory) -> list:
     files = os.listdir(directory)
@@ -24,7 +24,9 @@ def get_files(directory) -> list:
             file_list.append(file)
     return file_list
 
-def generate_list_numbers(dataFrame: pd.DataFrame) -> None:
+def generate_list_numbers(dataFrame) -> None:
+    first_list_number: int = 1
+    
     if pd.isna(dataFrame.at[0, 'List Number']):
         first_list_number = 1
         
