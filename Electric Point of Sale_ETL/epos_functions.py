@@ -13,7 +13,7 @@ ERROR_EMAIL: str = str(os.getenv('receiverEmail'))
 DASHBOARD: str = str(os.getenv('new_epos_stream'))
 
 def get_files(directory) -> list:
-    files = os.listdir(directory)
+    files: list = os.listdir(directory)
     file_list = []
     
     if not files:
