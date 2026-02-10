@@ -111,8 +111,8 @@ subCR_df_v1 = sub_df_v1[sub_df_v1["cancelled_at"].isnull()].reset_index()
 columns_to_keep = ["product_title", "created_at"]
 subCR_df_v1 = subCR_df_v1[columns_to_keep]
 try:
-    subCR_df_v1["Year"] = subCR_df_v1["created_at"].dt.year
-    subCR_df_v1["Month"] = subCR_df_v1["created_at"].dt.strftime('%B') 
+    subCR_df_v1["Year"] = subCR_df_v1["created_at"].dt.year # type: ignore
+    subCR_df_v1["Month"] = subCR_df_v1["created_at"].apply(lambda x: x.strftime('%B') if pd.notna(x) else '') 
 except Exception as e:
     sys.exit(f"Error calculating the Year and Month columns for the created_at columns fields in subCR_df_v1 dataframe: {e}")
     
@@ -121,8 +121,9 @@ subCA_df_v1 = sub_df_v1[sub_df_v1["cancelled_at"].notnull()].reset_index()
 columns_to_keep = ["product_title", "cancelled_at"]
 subCA_df_v1 = subCA_df_v1[columns_to_keep]
 try:
-    subCA_df_v1["Year"] = subCA_df_v1["cancelled_at"].dt.year
-    subCA_df_v1["Month"] = subCA_df_v1["cancelled_at"].dt.strftime('%B')
+    subCA_df_v1["cancelled_at"] = pd.to_datetime(subCA_df_v1["cancelled_at"], errors='coerce')
+    subCA_df_v1["Year"] = subCA_df_v1["cancelled_at"].dt.year # type: ignore
+    subCA_df_v1["Month"] = subCA_df_v1["cancelled_at"].apply(lambda x: x.strftime('%B') if pd.notna(x) else '')
 except Exception as e:
     sys.exit(f"Error calculating the Year and Month columns for the created_at columns fields in subCA_df_v1 dataframe: {e}")
 
