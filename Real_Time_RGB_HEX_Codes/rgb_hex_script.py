@@ -13,7 +13,7 @@ def on_press(key):
     if hasattr(key, 'char') and key.char == 's':
         global hex_color
         
-        with open('rgb_hex_colors.txt', 'a') as f:
+        with open(fr'Real_Time_RGB_HEX_Codes\rgb_hex_colors.txt', 'a') as f:
             f.write(f'{hex_color}\n')
             print(f'Saved {hex_color} to rgb_hex_colors.txt')
 
