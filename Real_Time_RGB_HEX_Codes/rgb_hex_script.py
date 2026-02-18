@@ -35,7 +35,6 @@ try:
         hex_color = get_rgb_hex(rgb)
         
         print(f'RGB: {rgb} | HEX: {hex_color}        ', end='\r')
-        time.sleep(0.1)
-            
+        time.sleep(0.1)    
 except KeyboardInterrupt:
     print("\nExiting...")
