@@ -16,8 +16,13 @@ def on_press(key):
         with open(fr'Real_Time_RGB_HEX_Codes\rgb_hex_colors.txt', 'a') as f:
             f.write(f'{hex_color}\n')
             print(f'Saved {hex_color} to rgb_hex_colors.txt')
+            
+def clear_color_file():
+    with open(fr'Real_Time_RGB_HEX_Codes\rgb_hex_colors.txt', 'w') as f:
+        f.write('')
 
 ##### Main program #####
+clear_color_file()
 listener = keyboard.Listener(on_press=on_press)
 listener.start()
 
