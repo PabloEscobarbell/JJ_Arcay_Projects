@@ -9,6 +9,7 @@ import sys
 entry_widgets = {}
 FONT_SIZE = 12
 paypal_link = "https://paypal.me/JohnathanArcay"
+
 ##### Functions #####
 def reset_fields():
     for widget in entry_widgets.values():
