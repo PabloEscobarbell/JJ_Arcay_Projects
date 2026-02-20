@@ -1,7 +1,6 @@
 import tkinter as tk
 from tkinter import messagebox
 from fpdf import FPDF
-from openpyxl import Workbook, load_workbook
 from datetime import datetime
 import os
 import sys
