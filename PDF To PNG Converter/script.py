@@ -3,15 +3,11 @@ import sys
 
 def pdf_to_png(pdf_path, output_path):
     try:
-        # Open the PDF file
         pdf_document = fitz.open(pdf_path)
-        # Iterate through each page in the PDF
+        
         for page_number in range(len(pdf_document)):
-            # Get the content of the page
             page = pdf_document.load_page(page_number)
-            # Render the page to a pixmap (image)
-            pixmap = page.get_pixmap()
-            # Save the pixmap as a PNG file
+            pixmap = page.get_pixmap() # Render the page to a pixmap (image)
             output_file = f"{output_path}/page_{page_number + 1}.png"
             pixmap.save(output_file)
             
